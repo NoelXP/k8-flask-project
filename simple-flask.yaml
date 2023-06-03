@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-flask
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-flask
+  template:
+    metadata:
+      labels:
+        app: simple-flask
+    spec:
+      containers:
+      - name: simple-flask-container
+        image: simple-flask-image  #Doesnt exist yet need to build and publish
+        ports:
+        - containerPort: 5000
+        env:
+          - name: PORT
+            value: "5000"
