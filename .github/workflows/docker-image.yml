@@ -32,5 +32,5 @@ jobs:
         password: ${{ secrets.ghcr_token }}
     - name: publish
       run: |
-        docker push ghcr.io/NoelXP/flask:$(date +%s)
+        docker push ghcr.io/noelxp/flask:$(date +%s)
 
